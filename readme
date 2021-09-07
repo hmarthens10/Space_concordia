@@ -1,0 +1,40 @@
+command terminal codes to run
+
+MAKE SURE THE 'autonomy_training' folder is copied to your catkin ws...then do catkin_make...then proceed as below
+
+1st:
+
+roscore
+
+2nd:in a new terminal run code below
+
+roslaunch autonomy_training websocket.launch
+
+3rd:in a new terminal
+create python environment in directory /autonomy_training * ignore this if environment already created
+
+python3 -m venv venv
+
+4th: activate python environment
+
+. venv/bin/activate
+
+5th: ensure flask is installed * ignore if installed already
+
+pip install Flask
+
+6th:activate environment as in 4th and run code below
+
+export FLASK_APP=autonomy.py
+export FLASK_DEBUG=1
+
+flask run
+
+
+go to http://127.0.0.1:5000/
+7th: in a new terminal run code below
+
+rosrun autonomy_training talker 
+
+
+
